@@ -8,13 +8,13 @@
     },
     "servers": [ 
         {
-        "url": "http://localhost:3000"
+        "url": "wdd341-smoothie-mongoose.onrender.com"
         }
     ],
     "basePath": "/",
     "schemes": [
-      "http",
-      "https"
+      "https",
+      "http"
     ],
     "tags": [
         {
@@ -46,7 +46,7 @@
       "/users/auth/google": {
         "get":  {
             "tags": ["user-login"],
-            "description": "google authentication login http://localhost:3000/users/auth/google",
+            "description": "google authentication login http://localhost:3000/users/auth/google or https://wdd341-smoothie-mongoose.onrender.com/users/auth/google",
             "parameters": [],
             "responses": {}
         }

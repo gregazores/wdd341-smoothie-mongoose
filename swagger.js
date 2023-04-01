@@ -13,7 +13,7 @@ const doc = {
 //   host: 'smoothiexpress-api.onrender.com',
     servers: [ 
         {
-            'url': "http://localhost:3000",
+            'url': "wdd341-smoothie-mongoose.onrender.com",
         }
     ],
   schemes: ['https', 'http']
