@@ -1,0 +1,43 @@
+{
+  "name": "wdd341-smoothie-mongoose",
+  "version": "1.0.0",
+  "description": "node_modules\r .env",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gregazores/wdd341-smoothie-mongoose.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gregazores/wdd341-smoothie-mongoose/issues"
+  },
+  "homepage": "https://github.com/gregazores/wdd341-smoothie-mongoose#readme",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "@sideway/address": "^5.0.0",
+    "@sideway/formula": "^3.0.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^7.0.3",
+    "mongoose-findorcreate": "^3.0.0",
+    "passport": "^0.6.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^8.0.0",
+    "swagger-ui-express": "^4.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "swagger-autogen": "^2.23.1"
+  }
+}

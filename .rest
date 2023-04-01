@@ -1,0 +1,38 @@
+
+
+###  LOCALHOST 
+
+GET http://localhost:3000/balanced-fusions
+
+###
+http://localhost:3000/logout
+
+###
+http://localhost:3000/balanced-fusions/641fe5c7d9e1070e637b79af
+
+###
+http://localhost:3000/fruit-blend/64097229a49504dccb075764
+
+###
+http://localhost:3000/auth/google
+
+
+###  INSERT DATA 
+POST http://localhost:3000/balanced-fusions HTTP/1.1 
+content-type: application/json
+
+{
+"name": "AVOCOLADA4455", "image": "public/images/IslandGreen.png", "alt": "AVOCOLADA", "price": 9.19, "calories": 600, "ingredients": "avocado, pineapple, spinach, kale, coconut & lime", "quantity": 1
+}
+
+###  UPDATE DATA 
+PUT http://localhost:3000/balanced-fusions/641fe5c7d9e1070e637b79af HTTP/1.1 
+content-type: application/json
+
+{
+"name": "AVOCOLADA", "image": "../images/smoothies_imgs/SuperSunriseSmoothie.png", "alt": "AVOCOLADA", "price": 12.5, "calories": 600, "ingredients": "avocado, pineapple, spinach, kale, coconut & lime", "quantity": 1
+}
+
+###  DELETE DATA 
+DELETE http://localhost:3000/balanced-fusions/641ff1316e517d9bae6e9bad HTTP/1.1 
+content-type: application/json
