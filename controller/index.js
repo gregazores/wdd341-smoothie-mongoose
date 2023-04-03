@@ -47,7 +47,7 @@ SmoothieController.prototype.getAllSmoothies = async function(req, res, next) {
 SmoothieController.prototype.getSingleSmoothie = async function(req, res, next) {
     try {
         const SmoothieType = mongoose.model(this.endpoint, SmoothieSchema, this.endpoint);
-        const smoothie = await SmoothieType.find({_id: req.params.id})
+        const smoothie = await SmoothieType.findOne({_id: req.params.id})
         res.json(smoothie)
     } catch (error) {
         res.status(400).json({message: error.message})
