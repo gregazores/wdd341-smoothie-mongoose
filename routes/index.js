@@ -8,6 +8,7 @@ const passport = require("passport");
 require("../library/auth")
 
 router.use(cors())
+router.use('/public', express.static('public'))
 
 //router for swagger
 router.use('/', swaggerRouter);
