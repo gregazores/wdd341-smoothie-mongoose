@@ -14,7 +14,7 @@ const smoothieSchema = new mongoose.Schema({
     },
 
     price: {
-        type: mongoose.Decimal128
+        type: Number
     },
 
     calories: {
