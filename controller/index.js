@@ -1,7 +1,10 @@
 const Users = require('../model/user-model')
 const SmoothieSchema = require('../model/smoothie-model')
+const OrderSchema = require('../model/order-model')
 const mongoose = require("mongoose");
 const {smoothieSchema, userSchema} = require('../library/validationSchemas')
+
+/************************************************************************************************ */
 
 let UserController = function() {
 
@@ -29,6 +32,8 @@ UserController.prototype.addUser = async function(req, res, next) {
         res.status(400).json({message: error.message})
     }
 }
+
+/************************************************************************************************ */
 
 let SmoothieController = function(endpoint) {
     this.endpoint = endpoint
@@ -80,8 +85,6 @@ SmoothieController.prototype.createSmoothie = async function(req, res, next) {
         quantity: req.body.quantity,
         category: req.body.category,
     })
-
-
 
     try {
         const newsmoothie = await smoothie.save()
@@ -139,7 +142,65 @@ SmoothieController.prototype.deleteSmoothie = async function(req, res, next) {
     }
 }
 
+/************************************************************************************************ */
+
+let OrderController = function(endpoint) {
+    this.endpoint = endpoint
+}
+
+OrderController.prototype.createOrder = async function(req, res, next) {
+/*
+    if (!req.body.fname 
+        || !req.body.phone 
+        || !req.body.email 
+        || !req.body.ccnum 
+        || !req.body.expdate 
+        || !req.body.code 
+        || !req.body.orderDate
+        || !req.body.orderTotal
+        || !req.body.tax
+        || !req.body.shipping
+        || !req.body.items) {
+        res.status(400).send({ message: 'Content can not be empty!' });
+        return;
+    }
+
+    const orderEntries = await orderEntries.validateAsync(req.body)
+
+    if (orderEntries.error) {
+      res.status(400).send({ message: orderEntries.error });
+      return;
+    }
+
+*/
+    const orderType = mongoose.model(this.endpoint, OrderSchema, this.endpoint);
+    const order = new orderType({
+
+        fname: req.body.fname, 
+        phone: req.body.phone,
+        email: req.body.email, 
+        ccnum: req.body.ccnum, 
+        expdate: req.body.expdate, 
+        code: req.body.code,
+        orderDate: req.body.orderDate,
+        orderTotal: req.body.orderTotal,
+        tax: req.body.tax,
+        shipping: req.body.shipping,
+        items: req.body.items
+
+    })
+
+    try {
+        const neworder = await order.save()
+        res.status(201).json(neworder)
+    } catch (error) {
+        res.status(400).json({message: error.message})
+    }
+}
+
+
 module.exports = {
     UserController, 
-    SmoothieController
+    SmoothieController,
+    OrderController
 }

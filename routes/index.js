@@ -33,6 +33,8 @@ router.use('/balanced-fusions', require('./balancedFusions'))
 router.use('/fruit-blend', require('./fruitBlend'))
 // //router for super veggies requests
 router.use('/super-veggies', require('./superVeggies'))
+// //router for checkout requests
+router.use('/checkout', require('./checkout'))
 
 router.get('/', (req, res, next) => {
   res.send('CSE 341 SMOOTHIEXPRESS API')

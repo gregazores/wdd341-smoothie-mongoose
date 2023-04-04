@@ -8,7 +8,7 @@ GET http://localhost:3000/balanced-fusions
 http://localhost:3000/logout
 
 ###
-http://localhost:3000/balanced-fusions/641fe5c7d9e1070e637b79af
+http://localhost:3000/balanced-fusions/64097255a49504dccb07f3f0
 
 ###
 http://localhost:3000/fruit-blend/64097229a49504dccb075764
@@ -23,6 +23,14 @@ content-type: application/json
 
 {
 "name": "AVOCOLADA4455", "image": "public/images/IslandGreen.png", "alt": "AVOCOLADA", "price": 9.19, "calories": 600, "ingredients": "avocado, pineapple, spinach, kale, coconut & lime", "quantity": 1
+}
+
+###  INSERT DATA 
+POST http://localhost:3000/checkout HTTP/1.1 
+content-type: application/json
+
+{
+"fname": "John", "phone": "772-558-7111", "email": "user@user.com"
 }
 
 ###  UPDATE DATA 
