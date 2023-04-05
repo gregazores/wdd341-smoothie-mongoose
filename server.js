@@ -4,8 +4,6 @@ const mongoose = require('./library/connection')
 const router = require('./routes');
 require("./library/auth")
 
-app.set("trust proxy", 1);
-
 app.use(express.urlencoded({extended: false}))
 //so we can use json data as well
 app.use(express.json())
@@ -21,7 +19,7 @@ app.use(express.json())
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Headers', '*');
-    res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+    res.setHeader('Access-Control-Allow-Origin', "http://localhost:5173");
     res.setHeader('Access-Control-Allow-Credentials', 'true');
     res.setHeader(
       "Access-Control-Allow-Methods",
