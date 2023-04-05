@@ -20,7 +20,8 @@ router.use(session({
   saveUninitialized: false,
   cookie: {
     SameSite: 'none',
-    secure: false
+    secure: false,
+    httpOnly: false,
   } //so it will work with http and https
 }));
 
