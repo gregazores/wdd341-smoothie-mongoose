@@ -202,7 +202,7 @@ OrderController.prototype.createOrder = async function(req, res, next) {
 OrderController.prototype.getOrder = async function (req, res, next) {
     try {
         const OrderType = mongoose.model(this.endpoint, OrderSchema, this.endpoint);
-        const orders = await OrderType.findAll({user: req.params.id})
+        const orders = await OrderType.find({user: req.params.id})
         res.json(orders)
     } catch (error) {
         res.status(400).json({message: error.message})

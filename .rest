@@ -53,3 +53,7 @@ content-type: application/json
 {
 "username": "greg azores", "password": "TRViDK@oRb}fP3t>8;nY"
 }
+
+###
+GET http://localhost:3000/orders/642d0b82b3f0e1724adaa7ec
+content-type: application/json

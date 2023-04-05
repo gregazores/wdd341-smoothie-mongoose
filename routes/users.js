@@ -43,7 +43,7 @@ router.get("/logout", function(req, res, next) {
   });
 
 
-router.get("/protected", function(req, res){
+router.post("/protected", function(req, res){
   if (req.isAuthenticated()){
     res.send("This request is authenticated");
   } else {
