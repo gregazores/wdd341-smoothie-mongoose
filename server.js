@@ -4,6 +4,8 @@ const mongoose = require('./library/connection')
 const router = require('./routes');
 require("./library/auth")
 
+app.set('trust proxy', 1) // trust first proxy
+
 app.use(express.urlencoded({extended: false}))
 //so we can use json data as well
 app.use(express.json())
