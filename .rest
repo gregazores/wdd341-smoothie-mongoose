@@ -44,3 +44,12 @@ content-type: application/json
 ###  DELETE DATA 
 DELETE http://localhost:3000/balanced-fusions/641ff1316e517d9bae6e9bad HTTP/1.1 
 content-type: application/json
+
+####
+
+POST http://localhost:3000/users/login/ HTTP/1.1 
+content-type: application/json 
+
+{
+"username": "greg azores", "password": "TRViDK@oRb}fP3t>8;nY"
+}
