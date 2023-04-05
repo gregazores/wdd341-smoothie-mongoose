@@ -18,7 +18,7 @@ app.use(express.json())
 // app.use(passport.session());
 
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Headers', '*');
+    res.setHeader('Access-Control-Allow-Headers', req.headers.origin);
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader(
       "Access-Control-Allow-Methods",
