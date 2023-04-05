@@ -18,7 +18,11 @@ router.use(session({
   secret: "Our little secret.",
   resave: false,
   saveUninitialized: false,
-  cookie: {secure: false} //so it will work with http and https
+  cookie: {
+    sameSite: "none",
+    //so it will work with http and https
+    secure: false
+  } 
 }));
 
 router.use(passport.initialize());
