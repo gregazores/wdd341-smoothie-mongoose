@@ -7,7 +7,7 @@ const passport = require("passport");
 //importing passport here
 require("../library/auth")
 
-router.use(cors())
+//router.use(cors())
 router.use('/public', express.static('public'))
 
 //router for swagger
@@ -19,6 +19,7 @@ router.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
+    //sameSite needs to be set to none to allow exchanging of cookies cross origin.
     sameSite: "none",
     //so it will work with http and https
     secure: false
