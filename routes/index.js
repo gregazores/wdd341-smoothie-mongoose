@@ -19,6 +19,7 @@ router.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
+    httpOnly: true,
     //sameSite needs to be set to none to allow exchanging of cookies cross origin.
     sameSite: "none",
     //so it will work with http and https
