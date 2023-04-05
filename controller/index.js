@@ -178,6 +178,7 @@ OrderController.prototype.createOrder = async function(req, res, next) {
 
         fname: req.body.fname, 
         phone: req.body.phone,
+        user: req.body.user,
         email: req.body.email, 
         ccnum: req.body.ccnum, 
         expdate: req.body.expdate, 
@@ -196,6 +197,17 @@ OrderController.prototype.createOrder = async function(req, res, next) {
     } catch (error) {
         res.status(400).json({message: error.message})
     }
+}
+
+OrderController.prototype.getOrder = async function (req, res, next) {
+    try {
+        const OrderType = mongoose.model(this.endpoint, OrderSchema, this.endpoint);
+        const orders = await OrderType.findAll({user: req.params.id})
+        res.json(orders)
+    } catch (error) {
+        res.status(400).json({message: error.message})
+    }
+
 }
 
 

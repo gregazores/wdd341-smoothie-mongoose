@@ -19,15 +19,17 @@ router.post('/', (req, res, next) => {
 
 });
 
-router.put('/:id', (req, res, next) => {
-    let controller = new SmoothieController('FruitBlend')
-    controller.updateSmoothie(req, res, next)
+router.get('/:id', (req, res, next) => {
+    if (req.isAuthenticated()){
+      let controller = new OrderController('orders')
+      controller.getOrder(req, res, next)
+    } else {
+      res.status(400).json("Sorry you must be logged in! No authorization");
+    }
+
+
 });
 
-router.delete('/:id', (req, res, next) => {
-    let controller = new SmoothieController('FruitBlend')
-    controller.deleteSmoothie(req, res, next)
-});
 
 
 
