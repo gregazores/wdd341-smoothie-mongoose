@@ -79,7 +79,7 @@ req.login(user, function(err){
     res.status(400).json({message: err.message})
     } else {
     passport.authenticate("local")(req, res, function(){
-        res.status(200).json("Successfully Logged In!");
+        res.status(200).json(req.session);
     });
     }
 });
